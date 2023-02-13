@@ -4,7 +4,7 @@ import 'package:test/scaffolding.dart';
 
 enum Certification { diploma, ba, master, phd }
 void main(List<String> arguments) {
-  num number1 = 1;
+  /* num number1 = 1;
   int number2 = 5;
   double number3 = 8.4;
   String name = "omar";
@@ -70,9 +70,38 @@ void main(List<String> arguments) {
 // function body
 // positional parameters
 // optional positional parameters
-// optional named parameters
-  int sum(int num1,{ int num2=0}) => num1 + num2;
+// optional named parameters*/
+  int sum(int num1, int num2) {
+    return num1 + num2;
+  }
 
+  int countWirlLetters(String word) {
+    return word.length;
+  }
 
-  print(sum(9));
+  String convertWordToUppercase(String word) {
+    return word.toUpperCase();
+  }
+
+  List<String> dummyNames = ['ahmed', 'ali'];
+
+  dummyNames.map(convertWordToUppercase);
+// omar ahmed ali => Omar A. Ali
+  String formatFullName(String fullName, Function function) {
+    List<String> names = fullName.split(' ');
+    String firstName = function(names[0]);
+    String middleName = function(names[1]);
+    String lastName = function(names[2]);
+    return firstName + ' ' + middleName + ' ' + lastName;
+  }
+
+  String capetalizeName(String name) {
+    String firstLetter = name[0];
+    String remainLetters = name.substring(1);
+    return firstLetter.toUpperCase() + remainLetters;
+  }
+
+  String fullName = "omar ahmed ali";
+  String formatedNAme = formatFullName(fullName, capetalizeName);
+  print(formatedNAme);
 }
