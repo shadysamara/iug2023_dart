@@ -2,9 +2,14 @@ import 'package:dart_application_1/dart_application_1.dart'
     as dart_application_1;
 import 'package:test/scaffolding.dart';
 
+import 'article.dart';
+import 'dummy_data.dart';
+import 'student.dart';
+
 enum Certification { diploma, ba, master, phd }
+typedef String IUGFunction(String value);
 void main(List<String> arguments) {
-  num number1 = 1;
+  // num number1 = 1;
   int number2 = 5;
   double number3 = 8.4;
   String name = "omar";
@@ -71,8 +76,29 @@ void main(List<String> arguments) {
 // positional parameters
 // optional positional parameters
 // optional named parameters
-  int sum(int num1,{ int num2=0}) => num1 + num2;
+  // String formatFullName(String fullName, IUGFunction fun) {
+  //   List<String> names = fullName.split(' ');
+  //   String fNAme = fun(names[0]);
+  //   String sNAme = fun(names[1]);
+  //   String lNAme = fun(names[2]);
+  //   return '$fNAme ${sNAme[0]}. $lNAme';
+  // }
 
+  // String capetilizeName(String name) {
+  //   return name[0].toUpperCase() + name.substring(1).toLowerCase();
+  // }
 
-  print(sum(9));
+  // int sum(int x, int y) {
+  //   return x + y;
+  // }
+
+  List<Map<String, dynamic>> studentsData = [
+    {
+      "name": "omar",
+      "age": 11,
+      "school": {"name": "gaza", "manager": "ahmed saeed"}
+    }
+  ];
+  ArticleMainClass articleMainClass = ArticleMainClass.fromMap(newsData);
+  print(articleMainClass.articles!.length);
 }
