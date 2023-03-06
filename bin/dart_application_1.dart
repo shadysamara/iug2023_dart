@@ -5,6 +5,7 @@ import 'package:test/scaffolding.dart';
 import 'article.dart';
 import 'dummy_data.dart';
 import 'student.dart';
+import 'vehicle.dart';
 
 enum Certification { diploma, ba, master, phd }
 typedef String IUGFunction(String value);
@@ -99,6 +100,7 @@ void main(List<String> arguments) {
       "school": {"name": "gaza", "manager": "ahmed saeed"}
     }
   ];
-  ArticleMainClass articleMainClass = ArticleMainClass.fromMap(newsData);
-  print(articleMainClass.articles!.length);
+  // Car car = Car();
+  const List<String> stuData = ["ahmed", "ali"];
+  stuData.add("shaker");
 }

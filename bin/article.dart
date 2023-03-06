@@ -1,10 +1,11 @@
 class ArticleMainClass {
   List<Article>? articles;
   ArticleMainClass.fromMap(Map<String, dynamic> map) {
-    List<Map<String,dynamic>> maps = map['articles'];
-    articles = maps.map((e) => Article.fromMap(e)).toList();
+    List<Map<String, dynamic>> data = map['articles'];
+    data.map((e) => Article.fromMap(e)).toList();
   }
 }
+// ssamara@iugaza.edu.ps
 
 class Article {
   String? author;
